@@ -1,4 +1,82 @@
-<h2>Confirme seu e-mail — Carvejani Wine</h2>
-<p>Continue para confirmar sua conta.</p>
-<p><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&amp;type=email">Confirmar meu e-mail</a></p>
-<p>Se você não solicitou este cadastro, ignore esta mensagem.</p>
+<!doctype html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light">
+  <title>Confirme seu e-mail | Carvejani Wine</title>
+  <style>
+    body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+    table,td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+    table{border-collapse:collapse!important;}
+    img{border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;}
+    a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important;}
+    @media screen and (max-width:620px){
+      .outer{padding:16px 10px!important;}
+      .content{padding:30px 24px!important;}
+      .brand{font-size:25px!important;letter-spacing:3px!important;}
+      .hero-copy{padding:23px 16px 23px 24px!important;}
+      .hero-title{font-size:24px!important;}
+      .hero-kicker{font-size:8px!important;letter-spacing:1px!important;}
+      .email-title{font-size:30px!important;}
+      .button-wrap{width:100%!important;}
+      .button{display:block!important;}
+      .footer{padding:25px 24px!important;}
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#f1ece3;color:#292721;">
+  <div style="display:none;font-size:1px;line-height:1px;color:#f1ece3;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Um passo para deixar sua conta pronta na Carvejani Wine.</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f1ece3" style="width:100%;background-color:#f1ece3;">
+    <tr><td class="outer" align="center" style="padding:36px 16px;">
+      <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#fcfaf6" style="width:100%;max-width:600px;background-color:#fcfaf6;border:1px solid #ded8cf;">
+        <tr><td align="center" style="padding:28px 20px 25px;border-top:3px solid #a98a50;">
+          <a href="{{ .SiteURL }}" style="color:#511e2b;text-decoration:none;">
+            <span class="brand" style="display:block;font-family:Georgia,'Times New Roman',serif;font-size:29px;line-height:36px;letter-spacing:5px;color:#511e2b;">CARVEJANI</span>
+            <span style="display:block;font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:20px;letter-spacing:5px;color:#987b45;">WINE</span>
+          </a>
+        </td></tr>
+        <tr><td bgcolor="#511e2b" style="background-color:#511e2b;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="hero-copy" width="55%" valign="middle" style="width:55%;padding:25px 25px 25px 36px;">
+                <p class="hero-kicker" style="margin:0 0 14px;font-family:Arial,Helvetica,sans-serif;font-size:9px;line-height:15px;letter-spacing:2px;color:#e4cea7;">VINHOS &amp; ENCONTROS</p>
+                <p class="hero-title" style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:1.15;font-weight:normal;color:#fcfaf6;">Bons vinhos.<br>Bons encontros.</p>
+                <table role="presentation" width="42" cellpadding="0" cellspacing="0" style="margin-top:19px;"><tr><td height="2" bgcolor="#c6a974" style="height:2px;line-height:2px;font-size:1px;">&nbsp;</td></tr></table>
+              </td>
+              <td width="45%" valign="middle" style="width:45%;padding:0;">
+                <img src="https://raw.githubusercontent.com/Victor-Aversani/carvejani-wine/main/public/assets/wine-2.jpg" width="270" alt="Vinho tinto Casillero del Diablo ao lado de uma taça" style="display:block;width:100%;max-width:270px;height:auto;" />
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+        <tr><td class="content" style="padding:39px 40px 33px;">
+          <p style="margin:0 0 16px;font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:17px;font-weight:bold;letter-spacing:1.8px;color:#987b45;">BEM-VINDO À CARVEJANI WINE</p>
+          <h1 class="email-title" style="margin:0 0 22px;font-family:Georgia,'Times New Roman',serif;font-size:35px;line-height:1.12;font-weight:normal;letter-spacing:-0.6px;color:#511e2b;">Sua conta começa<br>com uma confirmação.</h1>
+          <p style="margin:0 0 26px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:25px;color:#625d55;">Falta apenas um passo para deixar sua conta pronta. Confirme seu endereço de e-mail no botão abaixo.</p>
+          <table class="button-wrap" role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 23px;">
+            <tr><td align="center" bgcolor="#511e2b" style="background-color:#511e2b;border:1px solid #511e2b;border-radius:3px;">
+              <a class="button" href="{{ .ConfirmationURL }}" style="display:inline-block;padding:17px 27px;border:1px solid #511e2b;border-radius:3px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:18px;font-weight:bold;text-decoration:none;color:#ffffff;mso-padding-alt:0;text-underline-color:#511e2b;"><!--[if mso]><i style="mso-font-width:150%;mso-text-raise:26pt;" hidden>&emsp;</i><span style="mso-text-raise:13pt;"><![endif]-->Confirmar meu e-mail<!--[if mso]></span><i style="mso-font-width:150%;" hidden>&emsp;&#8203;</i><![endif]--></a>
+            </td></tr>
+          </table>
+          <p style="margin:0 0 25px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#797268;">Este link é pessoal, tem validade limitada e só pode ser usado uma vez.</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f1ece3" style="background-color:#f1ece3;border-left:2px solid #a98a50;">
+            <tr><td style="padding:16px 18px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#625d55;">Se você não criou esta conta, pode ignorar esta mensagem. Seu endereço só será confirmado após a validação do link.</td></tr>
+          </table>
+          <p style="margin:25px 0 7px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:19px;color:#797268;">Se o botão não abrir, copie e cole este endereço no navegador:</p>
+          <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:17px;word-break:break-all;overflow-wrap:anywhere;"><a href="{{ .ConfirmationURL }}" style="color:#6f2b3d;text-decoration:underline;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+        </td></tr>
+        <tr><td class="footer" style="padding:24px 40px 26px;border-top:1px solid #ded8cf;">
+          <p style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:24px;letter-spacing:1px;color:#511e2b;">Carvejani Wine</p>
+          <p style="margin:0 0 15px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;color:#797268;">Esta mensagem é sobre o acesso à sua conta.<br>Exclusivo para maiores de 18 anos. Beba com moderação.</p>
+          <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:9px;line-height:15px;color:#8a8277;">Foto: <a href="https://commons.wikimedia.org/wiki/File:Casillero_del_Diablo,_Merlot,_Chile,_2017.jpg" style="color:#8a8277;text-decoration:underline;">Brett Jordan / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/2.0/" style="color:#8a8277;text-decoration:underline;">CC BY 2.0</a>.</p>
+        </td></tr>
+      </table>
+      <!--[if mso]></td></tr></table><![endif]-->
+      <p style="margin:19px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:17px;color:#8a8277;text-align:center;">CARVEJANI WINE · VINHOS &amp; ENCONTROS</p>
+    </td></tr>
+  </table>
+</body>
+</html>
