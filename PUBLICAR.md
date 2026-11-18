@@ -52,6 +52,6 @@ A referência SQL está em `supabase/server-store.sql`. Ela já foi aplicada ao 
 
 ## Estado atual
 
-Arquivos preparados; a publicação não foi concluída. Faltam o repositório dedicado, o serviço Render, sua configuração privada e os testes no endereço público. Cadastro, confirmação, recuperação, login e logout já tiveram testes reais locais; isso não comprova esses fluxos na hospedagem.
+Site publicado em https://carvejani-wine.onrender.com no Render Free em 18/11/2026. Código em https://github.com/Victor-Aversani/carvejani-wine. A configuração privada foi preenchida diretamente no painel, sem incluir chaves secretas neste repositório. Catálogo e 150 fotografias responderam com sucesso; áreas privadas sem sessão retornam 401, arquivos privados 404 e origem externa em POST 403. Login com dados inválidos retorna 401. Os testes automatizados também passaram durante a compilação no Render. Ainda estão pendentes a revisão das URLs de e-mail no Supabase e os testes reais de cadastro, confirmação, login, recuperação e logout no endereço publicado. Os testes locais anteriores não substituem essa validação pública.
 
 Referências: https://render.com/docs/free · https://render.com/docs/web-services · https://supabase.com/docs/guides/getting-started/api-keys
