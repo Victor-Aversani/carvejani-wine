@@ -18,19 +18,20 @@ Foto original: Casillero del Diablo, Merlot, Chile, 2017, por Brett Jordan, dist
 
 - Fonte: https://commons.wikimedia.org/wiki/File:Casillero_del_Diablo,_Merlot,_Chile,_2017.jpg
 - Licença: https://creativecommons.org/licenses/by/2.0/
-- Arquivo público já existente no repositório: `public/assets/wine-2.jpg`.
+- Original no repositório: `public/assets/wine-2.jpg`.
+- Imagem usada nos e-mails: https://crlvjmsvyuvnsdpkwkpm.supabase.co/storage/v1/object/public/brand-assets/casillero-merlot-email-v1.jpg
 
-O banner usa a foto original em uma composição HTML, sem gerar ou alterar rótulos. A URL HTTPS da imagem é pública e não contém dados do destinatário. Se o repositório for tornado privado ou o arquivo removido, será necessário hospedar essa imagem em outro endereço público e atualizar os modelos.
+O banner usa a foto original em uma composição HTML, sem gerar ou alterar rótulos. Após um teste real em que a imagem do GitHub não apareceu no Gmail, a foto foi copiada sem alterações para o bucket público brand-assets no Supabase. O download anônimo respondeu 200 como image/jpeg e seu hash correspondeu ao original. O bucket aceita somente JPEG de até 1 MB. O bucket customer-avatars continua privado. A URL da foto não contém dados do destinatário.
 
 ## Estado no Supabase
 
-**Ainda não aplicado.** O painel deste projeto Free mostra “Set up custom SMTP to edit templates” e deixa Source/Save desabilitados. Com o envio padrão do Supabase, os modelos padrão continuam ativos. Nenhuma configuração de autenticação ou envio foi alterada.
+**Aplicado em 18/11/2026.** O proprietário cadastrou a credencial privada de SMTP da conta Gmail dedicada diretamente no Supabase. Foram salvos e conferidos os assuntos e os dois modelos HTML, com seus links ConfirmationURL preservados. A personalização permaneceu no plano Free, sem contratar Pro ou domínio.
 
 Projetos Free novos podem personalizar modelos após configurar SMTP próprio. Não foi contratado plano Pro, domínio ou serviço de envio.
 
-Uma opção para testes sem domínio próprio é uma conta Gmail elegível para SMTP com senha de app e verificação em duas etapas. A conta e a credencial devem ser configuradas pelo proprietário, diretamente nos painéis privados; nunca devem ser enviadas ao chat ou ao GitHub. Gmail possui cotas e não foi apresentado como infraestrutura de envio para uma loja em produção.
+Para este teste foi usada uma conta Gmail dedicada, cadastrada pelo proprietário. A credencial foi preenchida diretamente no painel privado; não foi recebida no chat nem incluída no GitHub. Gmail possui cotas e não foi apresentado como infraestrutura de envio para uma loja em produção.
 
-## Aplicar quando houver SMTP configurado e validado
+## Reaplicar os modelos
 
 1. Em Authentication → Emails → Confirm sign up, usar o assunto sugerido e copiar o HTML de `confirm-email.html` para Source.
 2. Em Reset password, usar o assunto sugerido e o HTML de `recover-password.html`.
@@ -42,6 +43,6 @@ Uma opção para testes sem domínio próprio é uma conta Gmail elegível para 
 - Prévia HTML de confirmação e recuperação revisada em navegador no computador e em largura móvel de 390 px.
 - Foto HTTPS respondeu 200 e foi exibida nas duas prévias.
 - Links dinâmicos mantêm `ConfirmationURL`, sem token de teste real ou troca do fluxo de autenticação.
-- Envio real e aparência no Gmail/Outlook ainda pendentes, pois o SMTP não foi configurado.
+- SMTP próprio habilitado e modelos salvos no painel. O primeiro envio retornou erro SMTP 535; o proprietário substituiu a credencial diretamente no painel por uma senha de app. O novo teste direto na API Auth retornou HTTP 200 em 18/11/2026, sem o erro de autenticação SMTP. O destinatário confirmou recebimento; após a troca da hospedagem da foto, confirmou também que a imagem apareceu na mensagem mais recente.
 
 Referências: https://supabase.com/changelog/46599-changes-to-email-template-customisation-on-free-tier · https://supabase.com/docs/guides/auth/auth-email-templates · https://supabase.com/docs/guides/auth/auth-smtp · https://support.google.com/accounts/answer/185833
