@@ -41,3 +41,9 @@ Os testes de reinício remotos usam um serviço isolado de teste; não foram des
 ## Publicação — 18/11/2026
 
 Render Free: implantação live confirmada, com os testes automatizados aprovados durante o build. HTTPS e /healthz responderam 200. Catálogo de 150 rótulos e as 150 fotos JPEG carregaram sem falhas. Conta, status de recuperação e avatar sem sessão retornaram 401; arquivos privados retornaram 404; POST com origem externa foi bloqueado com 403. Login inválido passou pelo fluxo público e retornou 401. Configuração da URL dos e-mails e os fluxos com login/e-mail real no domínio publicado ainda aguardam validação.
+
+
+## Correção do login — 18/11/2026
+
+O teste remoto foi ajustado para reproduzir a resposta real de inserção PostgREST: HTTP 201 Created com corpo vazio quando Prefer: return=minimal está ativo. Antes da correção, o teste de login falhou com 503. O servidor agora respeita o retorno mínimo sem tentar ler JSON inexistente. Todos os testes automatizados passaram depois da alteração. A implantação corrigida ficou live no Render e o usuário confirmou em 18/11/2026 que conseguiu entrar na área da conta no site publicado. Confirmação e recuperação de e-mail no domínio público, logout público e os demais cenários ainda não foram declarados concluídos.
+
