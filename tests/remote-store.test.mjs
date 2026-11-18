@@ -22,7 +22,7 @@ test('Sessões remotas: reinício, cookie seguro, criptografia, limites comparti
    else if(p==='/rest/v1/carvejani_server_sessions'){
     const id=u.searchParams.get('id')?.slice(3),uid=u.searchParams.get('user_id')?.slice(3);
     if(req.method==='GET')result=rows.has(id)?[rows.get(id)]:[];
-    else if(req.method==='POST'){rows.set(body.id,body);status=204}
+    else if(req.method==='POST'){assert.equal(req.headers.prefer,'return=minimal');rows.set(body.id,body);status=201}
     else if(req.method==='PATCH'){if(rows.has(id))rows.set(id,{...rows.get(id),...body});status=204}
     else if(req.method==='DELETE'){for(const [key,row] of rows)if(key===id||row.user_id===uid)rows.delete(key);status=204}
    }
@@ -32,7 +32,7 @@ test('Sessões remotas: reinício, cookie seguro, criptografia, limites comparti
    else if(p==='/auth/v1/user')result=user;
    else if(p==='/rest/v1/customer_profiles')result=[{id:user.id,full_name:'Cliente'}];
   }
-  res.writeHead(status,{'Content-Type':'application/json'});res.end(status===204?undefined:JSON.stringify(result));
+  res.writeHead(status,{'Content-Type':'application/json'});res.end(status===201||status===204?undefined:JSON.stringify(result));
  });
  const provider=await listen(fake),origin='https://shop.example.invalid';
  const config={NODE_ENV:'test',SESSION_STORE:'supabase',SUPABASE_SECRET_KEY:'sb_secret_isolated_test',SUPABASE_URL:provider,SUPABASE_PUBLISHABLE_KEY:'sb_publishable_isolated_test',SESSION_ENCRYPTION_KEY:'22'.repeat(32),APP_ORIGIN:origin};

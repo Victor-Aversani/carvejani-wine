@@ -15,7 +15,9 @@ export function createSessionStore(env,root) {
    try {
     const r=await fetch(base+endpoint,{method,headers:{apikey:env.SUPABASE_SECRET_KEY,...(body?{'Content-Type':'application/json'}:{}),...(prefer?{Prefer:prefer}:{})},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(15000)});
     if(!r.ok)throw unavailable();
-    return r.status===204?null:await r.json();
+    // PostgREST can return 201 with an empty body for return=minimal inserts.
+    if(prefer==='return=minimal'||r.status===204)return null;
+    return await r.json();
    } catch {throw unavailable()}
   }
   const filter=id=>'?id=eq.'+encodeURIComponent(id);
